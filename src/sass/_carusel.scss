@@ -1,0 +1,39 @@
+.caruselInner {
+  position: relative;
+  overflow: hidden;
+
+  &__left {
+    background: url("../img/mx.png") -300px 0 no-repeat;
+    width: 29px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    left: -39px;
+    top: 50%;
+    margin-top: -25px;
+  }
+  &__right {
+    background: url("../img/mx.png") -300px -50px no-repeat;
+    width: 29px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    right: -39px;
+    top: 50%;
+    margin-top: -25px;
+  }
+  &__slider {
+    position: relative;
+  }
+  &__item {
+    float: left;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+

@@ -1,3 +1,30 @@
+.caruselInner {
+  position: relative;
+  overflow: hidden; }
+  .caruselInner__left {
+    background: url("../img/mx.png") -300px 0 no-repeat;
+    width: 29px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    left: -39px;
+    top: 50%;
+    margin-top: -25px; }
+  .caruselInner__right {
+    background: url("../img/mx.png") -300px -50px no-repeat;
+    width: 29px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    right: -39px;
+    top: 50%;
+    margin-top: -25px; }
+  .caruselInner__slider {
+    position: relative; }
+  .caruselInner__item {
+    float: left;
+    width: 100%; }
+
 html, body {
   width: 100%;
   height: 100%; }
@@ -319,7 +346,7 @@ body {
     margin: 0 0 17px 0; }
 
 .caruselWrap {
-  overflow: hidden; }
+  position: relative; }
   .caruselWrap:after {
     content: "";
     display: table;
