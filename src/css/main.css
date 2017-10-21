@@ -81,5 +81,84 @@ body {
   display: table;
   clear: both; }
 
+.itemPic {
+  padding: 17px 0 0 0; }
+
+.title {
+  text-transform: uppercase;
+  padding: 0 40px;
+  margin-bottom: 0; }
+
+.itemPicInner {
+  margin: 26px 0 0 0; }
+
+.itemDesc {
+  padding: 0 36px; }
+
+.itemInfo__id {
+  font-size: 12px;
+  color: #7d7f85;
+  margin: 15px 0 4px 0; }
+
+.itemInfo__price {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ce2c52; }
+
+.itemInfo__price--old {
+  color: #2c303d;
+  text-decoration: line-through;
+  margin-right: 17px; }
+
+.itemInfoRating {
+  display: inline-block;
+  vertical-align: top; }
+  .itemInfoRating li {
+    padding: 6px 0 0 0;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: -1px; }
+    .itemInfoRating li a {
+      background-image: url("../img/mx.png");
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+      display: block;
+      text-indent: -9000px;
+      overflow: hidden; }
+  .itemInfoRating__item a {
+    background-position: -19px 0; }
+  .itemInfoRating__item--activ a {
+    background-position: 0 0; }
+
+.socialPopapWrap {
+  display: none;
+  vertical-align: top;
+  margin: 0 0 0 14px;
+  position: relative; }
+  .socialPopapWrap__title {
+    color: #2c87ce;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 3px 0 0 0;
+    display: block; }
+  .socialPopapWrap__inner {
+    background: #fff;
+    width: 287px;
+    max-width: 100%;
+    -webkit-box-shadow: 0 0 2px 3px rgba(181, 181, 181, 0.7);
+            box-shadow: 0 0 2px 3px rgba(181, 181, 181, 0.7);
+    position: absolute;
+    left: -105px; }
+  .socialPopapWrap__subtitle {
+    color: #2c87ce;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0; }
+
 /* Small Devices, Tablets */
 /* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  .socialPopapWrap {
+    display: inline-block; } }

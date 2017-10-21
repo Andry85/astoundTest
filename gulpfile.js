@@ -86,7 +86,7 @@ gulp.task('clean:dist', function(callback){
 });
 
 gulp.task('default', function (callback) {
-    runSequence(['sass', 'browserSync', 'watch', 'webserver'], callback)
+    runSequence(['sass', 'browserSync', 'watch'], callback)
 });
 
 
