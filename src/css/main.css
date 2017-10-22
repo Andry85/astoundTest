@@ -1,3 +1,19 @@
+.carusel {
+  padding: 80px 56px 0 56px; }
+  .carusel__title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 17px 0; }
+
+.caruselOuter {
+  position: relative; }
+  .caruselOuter:after {
+    content: "";
+    display: table;
+    clear: both; }
+
 .caruselInner {
   position: relative;
   overflow: hidden; }
@@ -24,6 +40,33 @@
   .caruselInner__item {
     float: left;
     width: 100%; }
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  .carusel {
+    padding: 53px 0 0 0; }
+    .carusel__title {
+      margin-bottom: 28px; }
+  .caruselInner__slider {
+    text-align: center; }
+  .caruselInner__item {
+    width: 300px !important;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 16px 40px 20px;
+    float: none; } }
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  .carusel {
+    padding: 58px 0 0 0; }
+    .carusel__title {
+      text-align: left; }
+  .caruselInner__item {
+    width: 265px !important;
+    margin: 0 -4px 20px 20px; }
+    .caruselInner__item:nth-child(3n+1) {
+      margin-left: 0; } }
 
 html, body {
   width: 100%;
@@ -336,22 +379,6 @@ body {
     width: 100%;
     text-transform: uppercase; }
 
-.carusel {
-  padding: 80px 56px 0 56px; }
-  .carusel__title {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin: 0 0 17px 0; }
-
-.caruselWrap {
-  position: relative; }
-  .caruselWrap:after {
-    content: "";
-    display: table;
-    clear: both; }
-
 .product {
   position: relative; }
   .product__pic img {
@@ -419,17 +446,6 @@ body {
       height: 44px;
       margin: 0;
       max-width: 222px; }
-  .carusel {
-    padding: 53px 0 0 0; }
-    .carusel__title {
-      margin-bottom: 28px; }
-  .caruselList {
-    text-align: center; }
-    .caruselList__item {
-      width: 300px;
-      display: inline-block;
-      vertical-align: top;
-      margin: 0 16px 40px 20px; }
   .productPrice {
     padding: 0; }
     .productPrice span {
@@ -444,15 +460,6 @@ body {
     margin: 0 auto; }
   .item {
     padding: 0; }
-  .carusel {
-    padding: 58px 0 0 0; }
-    .carusel__title {
-      text-align: left; }
-  .caruselList__item {
-    width: 265px;
-    margin: 0 -4px 20px 20px; }
-    .caruselList__item:nth-child(3n+1) {
-      margin-left: 0; }
   .productPrice {
     right: 0;
     left: auto;

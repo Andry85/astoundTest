@@ -42,19 +42,19 @@
     /*********************************************************/
     /* start slider   */
     /********************************************************/
-        caruselRun();
+
+
+
+        startSlider();
         // run test on resize of the window
-        $(window).resize(caruselRun);
-        function caruselRun(){
-            if ($(window).width() >= 768) {
-                location.reload(true);
+        $(window).resize(startSlider);
+        function startSlider(){
 
-            } else {
-                $('#slider').carusel();
-            }
-
+            $('#slider').carusel();
 
         }
+
+
     /*********************************************************/
     /* end slider  */
     /********************************************************/
