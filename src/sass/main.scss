@@ -147,6 +147,7 @@ body {
 		background: $bg-color;
 		width: 287px;
 		box-shadow: 0 0 7px 2px rgba(181,181,181,1.0);
+		border: 1px solid rgba(181,181,181,1.0);
 		position: absolute;
 		left: -105px;
 		top: 39px;
@@ -154,7 +155,7 @@ body {
 		.socialList {
 			padding: 13px 0 0 0;
 			&__item {
-				margin-right: 10px;
+				margin-right: 9px;
 			}
 		}
 		&:before {
@@ -176,7 +177,7 @@ body {
 			height: 0;
 			border-left: 8px solid transparent;
 			border-right: 8px solid transparent;
-			border-bottom: 8px solid rgba(181,181,181,0.6);
+			border-bottom: 8px solid rgba(181,181,181,1.0);
 			position: absolute;
 			left: 50%;
 			top: -9px;
@@ -217,7 +218,6 @@ body {
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				transform: translate(-50%, -50%);
 				background-image: url("../img/mx.png");
 				background-repeat: no-repeat;
 			}
@@ -228,6 +228,7 @@ body {
 			width: 8px;
 			height: 17px;
 			background-position: -100px 0;
+			margin: -9px 0 0 -4px;
 		}
 	}
 	&__twitter {
@@ -235,6 +236,7 @@ body {
 			width: 17px;
 			height: 13px;
 			background-position: -100px -21px;
+			margin: -7px 0 0 -9px;
 		}
 	}
 	&__pinterest {
@@ -242,6 +244,7 @@ body {
 			width: 16px;
 			height: 21px;
 			background-position: -100px -39px;
+			margin: -11px 0 0 -8px;
 		}
 	}
 	&__youtube {
@@ -249,6 +252,7 @@ body {
 			width: 18px;
 			height: 19px;
 			background-position: -100px -65px;
+			margin: -10px 0 0 -9px;
 		}
 	}
 	&__instagram {
@@ -256,6 +260,7 @@ body {
 			width: 18px;
 			height: 18px;
 			background-position: -100px -90px;
+			margin: -9px 0 0 -9px;
 		}
 	}
 }
@@ -311,6 +316,7 @@ body {
 .ItemBuy {
 	padding: 2px 0 0 0;
 	&__btn {
+		cursor: pointer;
 		border: 0;
 		background: #8ae6cf;
 		border-radius: 24px;

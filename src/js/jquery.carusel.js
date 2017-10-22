@@ -10,7 +10,6 @@
                         itemSumWidth,
                         sliderWidth,
                         caruselInnerWidth,
-                        diffWidth,
                         sliderWidthNumber;
 
 
@@ -32,6 +31,7 @@
                             itemSumWidth = itemSumWidth + $(this).width();
                         });
                         $('.caruselInner__slider').width(itemSumWidth);
+
                     };
 
                 if ($(window).width() <= 768) {
@@ -55,12 +55,10 @@
 
                         if (sliderWidthNumber - currentwidth <= leftPosNumberPlus) {
                             e.stopImmediatePropagation();
-                            $(this).css('opacity', 0.5);
                         } else {
                             $('.caruselInner__slider').animate({
                                 left: (leftPosNumber - currentwidth) + 'px'
                             },"slow");
-                            $('.caruselInner__right').css('opacity', 1.0);
                         }
                     });
 
@@ -71,12 +69,10 @@
 
                         if (leftPosNumber >= 0) {
                             e.stopImmediatePropagation();
-                            $(this).css('opacity', 0.5);
                         } else {
                             $('.caruselInner__slider').animate({
                                 left: (leftPosNumber + currentwidth) + 'px'
                             },"slow");
-                            $('.caruselInner__left').css('opacity', 1.0);
                         }
                     });
 
@@ -89,14 +85,6 @@
                         $('.caruselInner__item').width('auto');
                     });
                 }
-
-
-
-
-
-
-
-
 
 
         };

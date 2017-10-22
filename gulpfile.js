@@ -54,24 +54,16 @@ gulp.task('useref', function () {
 });
 
 
-gulp.task('images', function(){
-  return gulp.src('src/img/**/*.+(png|jpg|jpeg|gif|svg)')
-  // кэширование изображений, прошедших через imagemin
-  .pipe(cache(imagemin({
-      interlaced: true
-    })))
-  .pipe(gulp.dest('dist/img'))
-});
 
-gulp.task('fonts', function() {
-    return gulp.src('src/fonts/**/*')
-        .pipe(gulp.dest('dist/fonts'))
-});
 
+gulp.task('images', function() {
+    return gulp.src('src/img/**/*.+(png|jpg|jpeg|gif|svg)')
+        .pipe(gulp.dest('dist/img'))
+});
 
 
 gulp.task('css', function() {
-  return gulp.src('src/css/*/**')
+  return gulp.src('src/css/**/*')
   .pipe(gulp.dest('dist/css'))
 });
 
@@ -93,5 +85,5 @@ gulp.task('default', function (callback) {
 
 
 gulp.task('build', function (callback) {
-    runSequence(['clean:dist', 'sass', 'useref', 'images', 'js', 'fonts', 'css'], callback)
+    runSequence(['clean:dist', 'sass', 'useref', 'images', 'js', 'css'], callback)
 });

@@ -62,11 +62,12 @@
     padding: 58px 0 0 0; }
     .carusel__title {
       text-align: left; }
+  .caruselInner__slider {
+    margin-left: -20px; }
   .caruselInner__item {
     width: 265px !important;
-    margin: 0 -4px 20px 20px; }
-    .caruselInner__item:nth-child(3n+1) {
-      margin-left: 0; } }
+    margin: 0 0 20px 20px;
+    float: left; } }
 
 html, body {
   width: 100%;
@@ -231,6 +232,7 @@ body {
     width: 287px;
     -webkit-box-shadow: 0 0 7px 2px #b5b5b5;
             box-shadow: 0 0 7px 2px #b5b5b5;
+    border: 1px solid #b5b5b5;
     position: absolute;
     left: -105px;
     top: 39px;
@@ -238,7 +240,7 @@ body {
     .socialPopapWrap__inner .socialList {
       padding: 13px 0 0 0; }
       .socialPopapWrap__inner .socialList__item {
-        margin-right: 10px; }
+        margin-right: 9px; }
     .socialPopapWrap__inner:before {
       content: '';
       width: 0;
@@ -257,7 +259,7 @@ body {
       height: 0;
       border-left: 8px solid transparent;
       border-right: 8px solid transparent;
-      border-bottom: 8px solid rgba(181, 181, 181, 0.6);
+      border-bottom: 8px solid #b5b5b5;
       position: absolute;
       left: 50%;
       top: -9px;
@@ -291,36 +293,38 @@ body {
       position: absolute;
       top: 50%;
       left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-          -ms-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
       background-image: url("../img/mx.png");
       background-repeat: no-repeat; }
 
 .socialList__fb:before {
   width: 8px;
   height: 17px;
-  background-position: -100px 0; }
+  background-position: -100px 0;
+  margin: -9px 0 0 -4px; }
 
 .socialList__twitter:before {
   width: 17px;
   height: 13px;
-  background-position: -100px -21px; }
+  background-position: -100px -21px;
+  margin: -7px 0 0 -9px; }
 
 .socialList__pinterest:before {
   width: 16px;
   height: 21px;
-  background-position: -100px -39px; }
+  background-position: -100px -39px;
+  margin: -11px 0 0 -8px; }
 
 .socialList__youtube:before {
   width: 18px;
   height: 19px;
-  background-position: -100px -65px; }
+  background-position: -100px -65px;
+  margin: -10px 0 0 -9px; }
 
 .socialList__instagram:before {
   width: 18px;
   height: 18px;
-  background-position: -100px -90px; }
+  background-position: -100px -90px;
+  margin: -9px 0 0 -9px; }
 
 .itemText {
   padding: 14px 0 5px 0; }
@@ -365,6 +369,7 @@ body {
 .ItemBuy {
   padding: 2px 0 0 0; }
   .ItemBuy__btn {
+    cursor: pointer;
     border: 0;
     background: #8ae6cf;
     -webkit-border-radius: 24px;
