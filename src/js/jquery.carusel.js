@@ -1,94 +1,63 @@
-﻿(function($){
-    jQuery.fn.carusel = function(options){
-        options = $.extend({
+﻿(function ( $ ) {
+
+    $.fn.carusel = function( options ) {
+
+        // This is the easiest way to have default options.
+        var settings = $.extend({
+            // These are the defaults.
             count: 1
-        }, options);
-
-        var make = function(){
-
-                    var currentwidth,
-                        itemSumWidth,
-                        sliderWidth,
-                        caruselInnerWidth,
-                        sliderWidthNumber;
+        }, options );
 
 
-                    function gettingWidths() {
-                        itemSumWidth = 0;
-                        currentwidth = $('.caruselInner__item').width();
-                        $('.caruselInner__item').width(currentwidth/options.count);
-                        $('.caruselInner__item').each(function() {
-                            itemSumWidth = itemSumWidth + $(this).width();
-                        });
-                        $('.caruselInner__slider').width(itemSumWidth);
-                    };
+        return this.each(function() {
 
-                    function gettingWidthsDinumic() {
-                        itemSumWidth = 0;
-                        caruselInnerWidth = $('.caruselInner').width();
-                        $('.caruselInner__item').width(caruselInnerWidth);
-                        $('.caruselInner__item').each(function() {
-                            itemSumWidth = itemSumWidth + $(this).width();
-                        });
-                        $('.caruselInner__slider').width(itemSumWidth);
+             if ($(window).width() <= 767) {
 
-                    };
-
-                if ($(window).width() <= 768) {
-
-                    // add arrows
-                    $('.caruselOuter').append("<div class='caruselInner__left'></div><div class='caruselInner__right'></div>");
-
-                    gettingWidths();
-                    $(window).resize(gettingWidthsDinumic);
+                    $(this).parents('.caruselOuter').append("<div class='caruselInner__left'></div><div class='caruselInner__right'></div>");
+                    var myLeft;
+                    var goal = $(this);
+                    var mywidth = goal.width();
+                    var myChildren = goal.children().length;
+                    mywidth *=  myChildren;
+                    goal.css('width', mywidth);
+                    var myChildrenWidth = mywidth/myChildren;
+                    goal.children().width(myChildrenWidth);
 
 
-                    sliderWidth = $('.caruselInner__slider').width();
-                    sliderWidthNumber = parseInt(sliderWidth);
+                    $('.caruselInner__left').click(function () {
+                        myLeft = parseInt(goal.css('left'));
 
+                        if (myLeft > -(mywidth - myChildrenWidth)) {
 
-                    $('.caruselInner__left').click(function(e){
+                            goal.animate({
+                                left:  myLeft - myChildrenWidth + 'px'
+                            }, "slow");
 
-                        var leftPos = $('.caruselInner__slider').css('left');
-                        var leftPosNumber = parseInt(leftPos);
-                        var leftPosNumberPlus = Math.abs(leftPosNumber);
-
-                        if (sliderWidthNumber - currentwidth <= leftPosNumberPlus) {
-                            e.stopImmediatePropagation();
-                        } else {
-                            $('.caruselInner__slider').animate({
-                                left: (leftPosNumber - currentwidth) + 'px'
-                            },"slow");
                         }
                     });
 
-                    $('.caruselInner__right').click(function(e){
+                    $('.caruselInner__right').click(function () {
+                        myLeft = parseInt(goal.css('left'));
 
-                        var leftPos = $('.caruselInner__slider').css('left');
-                        var leftPosNumber = parseInt(leftPos);
+                        if (myLeft < 0) {
 
-                        if (leftPosNumber >= 0) {
-                            e.stopImmediatePropagation();
-                        } else {
-                            $('.caruselInner__slider').animate({
-                                left: (leftPosNumber + currentwidth) + 'px'
-                            },"slow");
+                            goal.animate({
+                                left:  myLeft + myChildrenWidth + 'px'
+                            }, "slow");
+
                         }
                     });
 
-                } else {
-                    $('.caruselOuter').find(".caruselInner__left,.caruselInner__right").remove();
-                    $('.caruselInner__slider').width('auto');
-                    $('.caruselInner__item').width('auto');
-                    $(window).resize(function(){
-                        $('.caruselInner__slider').width('auto');
-                        $('.caruselInner__item').width('auto');
-                    });
-                }
+             } else {
+                 goal.css('width', 'auto');
+                 goal.children().width('auto');
+                 $(this).parents('.caruselOuter').find("caruselInner__left,.caruselInner__right").remove();
+             }
 
 
-        };
+         });
 
-        return this.each(make);
+
     };
-})(jQuery);
+
+}( jQuery ));
